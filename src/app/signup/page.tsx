@@ -6,11 +6,14 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 function SignUp() {
+  const router = useRouter();
   const [user, setUser] = useState({
     email: "",
     password: "",
     username: "",
   });
+
+  const [buttonDisabled, setButtonDisabled] = useState(false);
 
   const onSignup = async () => {};
 
