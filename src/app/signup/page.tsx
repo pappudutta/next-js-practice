@@ -2,11 +2,11 @@
 
 import axios from "axios";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 function SignUp() {
-  // const router = useRouter;
+  const router = useRouter();
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -22,7 +22,7 @@ function SignUp() {
 
       const response = await axios.post("/api/users/signup", user);
       console.log(response.data);
-      // router.push("/login ");
+      router.push("/login ");
     } catch (error: any) {
       console.log("Signup failed", error.message);
 
